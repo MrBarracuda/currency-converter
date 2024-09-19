@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 import { Rates } from "@/lib/types.ts";
 import { ConverterRow } from "@/components/converter/converter-row.tsx";
 
-export function CurrencyForm({ rates }: { rates: Rates }) {
+export function ConverterForm({ rates }: { rates: Rates }) {
   const currency = Object.keys(rates);
 
   const [fromCurrency, setFromCurrency] = useState(currency[0]);
