@@ -1,0 +1,3 @@
+const CURRENCY_CODES = ["USD", "UAH", "EUR"];
+
+export const CURRENCY_CODES_ARRAY = CURRENCY_CODES;
