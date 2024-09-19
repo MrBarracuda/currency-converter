@@ -1,15 +1,15 @@
 import { useFetchCurrencyRates } from "@/hooks/useFetchCurrencyRates.ts";
-import { getCurrencyRates } from "@/lib/currency.ts";
 import { CURRENCY_CODES_ARRAY } from "@/lib/config.ts";
 import { Navbar } from "@/components/navbar.tsx";
-import { Converter } from "@/components/conventer";
+import { setCurrencyRatesRelativeUAH } from "@/lib/utils.ts";
+import { Converter } from "@/components/converter";
 
 const backupApiUrl = import.meta.env.VITE_CURRENCY_API_BACKUP_URL;
 
 export default function App() {
   const data = useFetchCurrencyRates(backupApiUrl);
 
-  const rates = getCurrencyRates(data, CURRENCY_CODES_ARRAY);
+  const rates = setCurrencyRatesRelativeUAH(data, CURRENCY_CODES_ARRAY);
 
   return (
     <>

@@ -1,5 +1,4 @@
 import { Rates } from "@/lib/types.ts";
-import { formatCurrency } from "@/lib/currency.ts";
 import { Wrapper } from "@/components/wrapper.tsx";
 
 export function Navbar({ rates }: { rates: Rates }) {
@@ -8,10 +7,9 @@ export function Navbar({ rates }: { rates: Rates }) {
       <Wrapper className="flex justify-between items-center max-w-screen-xl">
         <h1 className="text-2xl font-bold">Currency Converter</h1>
         <div>
-          {/*<h2>Rates</h2>*/}
           <ul className="text-lg">
-            <li>USD: {formatCurrency(rates.USD)}</li>
-            <li>EUR: {formatCurrency(rates.EUR)}</li>
+            <li>USD: {rates.USD.toFixed(2)}</li>
+            <li>EUR: {rates.EUR.toFixed(2)}</li>
           </ul>
         </div>
       </Wrapper>
